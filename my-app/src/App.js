@@ -1,34 +1,40 @@
 import React from "react";
 
-
-
-const danhsach = [
-          {
-            id:1,
-            name:"thanh",
-            age:21
-          },
-          {
-            id:2,
-            name:"java",
-            age:22
-          }
+const arr = [
+      {
+        a:1
+      },
+      {
+        a:2
+      },
+      {
+        a:3
+      }
 ]
 
 
-function  App() {
-      danhsach.map((e)=>{
-        return(
-          <React.Fragment>
-            <h1>{e.id}</h1>
-            <ul>
-               <li>{e.name}</li>
-              <li>{e.age}</li>
-            </ul>
-            </React.Fragment>
-        )
-      })
+
+class Car extends React.Component{
+
+  
+      render(){
+        const html =   arr.map((e)=>{
+          return( 
+            <div  className="render">
+                <h2>{e.a}</h2>
+            </div>)
+        })
+
+        return( 
+                         
+          <div>
+             <h1>hello</h1>
+              { html} 
+          </div>
+          )
+      }
 }
 
 
-export default App;
+
+export default Car;
