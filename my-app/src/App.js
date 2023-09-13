@@ -16,14 +16,45 @@ function getApi(callback){
       })
       .then(callback)
 }
-  getApi((data)=>{
-      console.log(data)
-  })
+
+
+
+// function RenderSong(data){
+//     data.map((song)=>{
+//               return(
+//                   <div className="listsong">
+//                         <div className="song">
+//                               <h1>{song.name}</h1>
+//                         </div>
+//                         <div>
+//                               <p>{song.image}</p>
+//                         </div>
+//                   </div>)
+//     })
+// }
+
+
+
+function App(){
+  return(
+        <div>
+          {getApi((data)=>{
+
+
+                <div>
+                   <h1>{data.name}</h1>
+                   <p>{data.singger}</p>
+                </div>
+                
+          })}
+        </div>
+  )
+
+}
 
 
 
 
-
-export default getApi;
+export default App;
 
 
