@@ -6,51 +6,36 @@ const songsApi = "https://thanh6886.github.io/usersAPI/usersAPI.json"
 
 
 
-function getApi(callback){
-      fetch(songsApi)
-      .then((data)=>{
-          return data.json()
-      })
-      .then((data)=>{
-            return data.songs
-      })
-      .then(callback)
-}
-
-
-
-// function RenderSong(data){
-//     data.map((song)=>{
-//               return(
-//                   <div className="listsong">
-//                         <div className="song">
-//                               <h1>{song.name}</h1>
-//                         </div>
-//                         <div>
-//                               <p>{song.image}</p>
-//                         </div>
-//                   </div>)
-//     })
-// }
-
-
-
 function App(){
-  return(
-        <div>
-          {getApi((data)=>{
-
-
-                <div>
-                   <h1>{data.name}</h1>
-                   <p>{data.singger}</p>
-                </div>
-                
-          })}
-        </div>
-  )
-
+            return(
+                  <div>
+                        <PostItiem
+                              name="Về Quê"
+                              image="https://toigingiuvedep.vn/wp-content/uploads/2022/11/hinh-anh-gai-xinh-de-thuong-deo-kinh-400x600.jpg"
+                        />
+                  </div>
+            )
 }
+
+function PostItiem(props){
+      return(
+            <div>
+                <div className="listsong">
+                    <div className="song">
+                            <h1>{props.name}</h1>
+                         <div>
+                           <img src={props.image}/>
+                         </div>
+                   </div>
+                </div>
+            </div>
+      )
+}
+
+
+
+
+
 
 
 
