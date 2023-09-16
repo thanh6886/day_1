@@ -8,17 +8,19 @@ function Button({tilte, click}){
 }
 
 
-function index(){
-      return 100
-}
 
 
 
 function App(){
-      const [counter, setCounter] = useState(index)
-      console.log(counter)
+      const [counter, setCounter] = useState({
+            name:"thanh",
+            age: 21
+      })
       const handleClick = ()=>{    
-            setCounter(counter + 1)
+            setCounter((e) => ({
+                  ...e,
+                  address:'hello'   
+            }))
       }
       return(
             <div>
