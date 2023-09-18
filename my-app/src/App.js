@@ -6,28 +6,20 @@ function Button({tilte, click}){
                   <button onClick={click}>{tilte}</button>
             )
 }
-
-
-
-
-
 function App(){
-      const [counter, setCounter] = useState({
-            name:"thanh",
-            age: 21
-      })
-      const handleClick = ()=>{    
-            setCounter((e) => ({
-                  ...e,
-                  address:'hello'   
-            }))
-      }
+      const [counter, setCounter] = useState(0)
+
+
+      setTimeout(()=>{
+                  setCounter((counter)=>{
+                        return counter+1
+                  })
+      },100)
       return(
             <div>
                   <h1>{counter}</h1>
                   <Button
                   tilte="click me"
-                  click={handleClick}
                   />
             </div>
       )
