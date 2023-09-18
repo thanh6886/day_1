@@ -1,11 +1,6 @@
 import React  , { useState, useEffect } from "react";
 
 
-function Render(c){
-       return(
-            <h2>{c}</h2>
-       )
-}
 
 
 
@@ -13,7 +8,6 @@ function Render(c){
 
 function Logger(a){
       console.log(a)
-      Render(a)
       
 }
 
@@ -25,12 +19,11 @@ function App(){
 
       return(
             <div>
+
                   <h1>{name || "hello"}</h1>
                   <input
-                  value={name}
-                  onChange={(e)=>{
-                        return setName(e.target.value)
-                  }}
+                  type="radio"
+                  aria-label="hello"
                   />
 
                   <button onClick={()=>{Logger(name)}}>ClickMe</button>
