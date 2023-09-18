@@ -1,29 +1,43 @@
 import React  , { useState, useEffect } from "react";
 
 
-function Button({tilte, click}){
-            return(
-                  <button onClick={click}>{tilte}</button>
-            )
+function Render(c){
+       return(
+            <h2>{c}</h2>
+       )
 }
+
+
+
+
+
+function Logger(a){
+      console.log(a)
+      Render(a)
+      
+}
+
 function App(){
-      const [counter, setCounter] = useState(0)
 
+      const [name, setName] = useState('')
 
-      setTimeout(()=>{
-                  setCounter((counter)=>{
-                        return counter+1
-                  })
-      },100)
+      
+
       return(
             <div>
-                  <h1>{counter}</h1>
-                  <Button
-                  tilte="click me"
+                  <h1>{name || "hello"}</h1>
+                  <input
+                  value={name}
+                  onChange={(e)=>{
+                        return setName(e.target.value)
+                  }}
                   />
+
+                  <button onClick={()=>{Logger(name)}}>ClickMe</button>
             </div>
       )
 }
+
 
 
 

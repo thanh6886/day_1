@@ -114,3 +114,39 @@ const [state, setState] = useState(initSate)
                   address:'hello'   
             }))
       }
+
+
+
+
+
+
+========== TWO-WAY binding ========
+giàng buộc 2 chiều 
+
+
+one-way ko thay giá trị nhưng ko thay đổi ui
+
+function App(){
+
+      const [name, setName] = useState('')
+      console.log(name)
+      return(
+            <div>
+                  <h1>{name || "hello"}</h1>
+                  <input
+                  
+                  onChange={(e)=>{
+                        return setName(e.target.value)
+                  }}
+                  />
+
+                  <button onClick={() => setName("thành")}>ClickMe</button>
+            </div>
+      )
+}
+
+cách giải quyết thên  value={name}
+
+
+khi này là two way
+
