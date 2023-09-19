@@ -1,35 +1,53 @@
-import React  , { useState, useEffect } from "react";
+import React  , { useState} from "react";
 
-
-
-
-
-
-
-function Logger(a){
-      console.log(a)
-      
-}
 
 function App(){
 
-      const [name, setName] = useState('')
+     const [list, setList] = useState([])
+     const [input, setInput] = useState('')
 
-      
+
+      function handlClick(e){
+            console.log(e)
+            setList(prev =>[...prev, input])
+            setInput('')
+      }
+
+
+
+
 
       return(
-            <div>
+            <div style={{padding: 32}}>
+                  <div>
+                        <p>danh sách </p>
+                  </div>
+                        <input
+                        value={input}
+                        onChange={e => setInput(e.target.value)}
+                        
+                        />
+                        <button onClick={()=>handlClick(input)}>ADD</button>
 
-                  <h1>{name || "hello"}</h1>
-                  <input
-                  type="radio"
-                  aria-label="hello"
-                  />
-
-                  <button onClick={()=>{Logger(name)}}>ClickMe</button>
+                        <div className="list">
+                                    <ul>{
+                                          list.map((elemnet, index)=>{
+                                                return(
+                                                      <li key={index}>
+                                                            {elemnet}
+                                                      </li>
+                                                )
+                                          })
+                                          }
+                                         
+                                    </ul>
+                        </div>
             </div>
       )
 }
+
+
+
 
 
 
