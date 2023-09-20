@@ -1,47 +1,26 @@
-import React  , { useState} from "react";
+import React  , { useState, useEffect} from "react";
+
+
+
+
 
 
 function App(){
 
-     const [list, setList] = useState([])
-     const [input, setInput] = useState('')
+      const [title,setTitle] = useState('')
 
-
-      function handlClick(e){
-            console.log(e)
-            setList(prev =>[...prev, input])
-            setInput('')
-      }
-
-
-
+      useEffect(()=>{
+          
+      })
 
 
       return(
-            <div style={{padding: 32}}>
-                  <div>
-                        <p>danh sách </p>
-                  </div>
-                        <input
-                        value={input}
-                        onChange={e => setInput(e.target.value)}
-                        
-                        />
-                        <button onClick={()=>handlClick(input)}>ADD</button>
-
-                        <div className="list">
-                                    <ul>{
-                                          list.map((elemnet, index)=>{
-                                                return(
-                                                      <li key={index}>
-                                                            {elemnet}
-                                                      </li>
-                                                )
-                                          })
-                                          }
-                                         
-                                    </ul>
-                        </div>
+            <div>
+                  <h1></h1>
+                  <input
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value) }
+                  />
             </div>
       )
 }

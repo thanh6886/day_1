@@ -150,3 +150,15 @@ cách giải quyết thên  value={name}
 
 khi này là two way
 
+
+
+========= useEffect ======
+
+
+// side effects  
+
+
+useEffect(callback, [])
+
+
+chỉ render lại 1 lần sau khi compomnet dc mous
