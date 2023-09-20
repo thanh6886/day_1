@@ -14,10 +14,10 @@ function App() {
 
   useEffect(()=>{
       const hanldScroll = ()=>{
-            console.log(window.scrollY);
-            setShow(window.scrollY >= 200)
+            console.log(document.scrollY);
+            setShow(document.scrollY >= 200)
       }
-        window.addEventListener("scroll", hanldScroll)
+        document.addEventListener("scroll", hanldScroll)
   }, [])
 
 
