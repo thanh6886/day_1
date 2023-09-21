@@ -1,68 +1,19 @@
 import React  , { useState, useEffect} from "react";
+import Content from "./Content";
 
+function App(){
 
-const songsApi = "https://thanh6886.github.io/usersAPI/usersAPI.json";
+  const [show, setShow] = useState(false)
+  return(
+    <React.StrictMode>
+    <button onClick={()=>setShow(!show)}>click me</button>
 
-function App() {
-  const [courses, setCourses] = useState([]);
+    {show && <Content/>}
 
-  const [show, setShow] = useState(false);
+    </React.StrictMode>
 
-  useEffect(() => {
-    fetchCourses();
-  }, []);
-
-  useEffect(()=>{
-      const hanldScroll = ()=>{
-            console.log(document.scrollY);
-            setShow(document.scrollY >= 200)
-      }
-        document.addEventListener("scroll", hanldScroll)
-  }, [])
-
-
-
-
-  const fetchCourses = () => {
-    fetch(songsApi)
-      .then((response) => response.json())
-      .then((data) => {
-        setCourses(data.songs);
-      });
-  };
-
-  return (
-    <div>
-      {courses.map((element, index) => (
-        <PostItem
-          key={index}
-          name={element.name}
-          singer={element.singer}
-          image={element.image}
-          song={element.path}
-        />
-      ))}
-    </div>
-  );
+  )
 }
-
-function PostItem(props) {
-  return (
-    <div>
-      <div className="listsong">
-        <div className="song">
-        <p><a href={props.song}></a> click</p>
-          <h1>{props.name}</h1>
-          <h2>{props.singer}</h2>
-          <div>
-            <img src={props.image} alt={`${props.name} cover`} />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 
 
 
