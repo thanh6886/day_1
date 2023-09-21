@@ -5,12 +5,12 @@ function App(){
 
   const [show, setShow] = useState(false)
   return(
-    <React.StrictMode>
+    <div>
     <button onClick={()=>setShow(!show)}>click me</button>
 
     {show && <Content/>}
 
-    </React.StrictMode>
+    </div>
 
   )
 }

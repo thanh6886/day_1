@@ -162,3 +162,50 @@ useEffect(callback, [])
 
 
 chỉ render lại 1 lần sau khi compomnet dc mous
+
+
+
+--------cách hoạt động của usrEffect
+
+call back luôn dc gọi sau khi Componment mounted
+
+
+-------useEffect(callback)
+
+gọi callback mỗi khi render
+
+---------useEffect(callback, [])
+
+gọi callback 1 lần 
+
+---------useEffect(callback, [state])
+
+gọi callback khi state thay đổi
+
+
+
+1 cập nhập lại state 
+2 cập nhập lại Dom 
+3 render lại UI
+4 gọi clearnup nếu deps thay đổi 
+5 gọi  useEffect Callback
+
+
+------clearup Func 
+ luôn dc gọi trước khi compoment unmao
+
+useEffect(()=>{
+ return ()=>
+ {
+
+ }
+})
+
+
+
+
+
+
+
+
+
