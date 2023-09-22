@@ -6,13 +6,10 @@ import { useState , useLayoutEffect, useEffect} from "react"
 const tabs = ["name", "singer", "path"]
 
 
-
-
-
 function Content(){
 
     const [api, setApi] = useState([])
-    const [type , setType] = useState("")
+    const [type , setType] = useState()
 
 
 

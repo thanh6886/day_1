@@ -1,5 +1,15 @@
 # day_1
  
+
+
+# Closure 
+
+là hàm có thể ghi nhớ nơi nó dc tạo ra và truy cập dc biến ở ngoài phạm vi của nó
+
+
+
+
+
 cách tạo 1 class Compoment 
 
 class Car extends React.Component {
@@ -202,9 +212,13 @@ useEffect(()=>{
 })
 
 
+# useState 
+
+-- cập nhật lại 
 
 
 
+# useCallback
 
 
 
