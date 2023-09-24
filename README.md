@@ -223,8 +223,12 @@ khi này là two way
 
 
 
-========= useEffect ======
-
+# ========= useEffect ======
+1. cập nhật lại state
+2. cập nhật lại Dom
+3. render lại UI
+4. gọi Cleanup  nếu dép thay đổi
+5. gọi useEffect Callback 
 
 // side effects  
 
@@ -265,6 +269,8 @@ gọi callback khi state thay đổi
 ------clearup Func 
  luôn dc gọi trước khi compoment unmao
 
+# cleanup function luôn được gọi trước khi callback được gọi
+
 useEffect(()=>{
  return ()=>
  {
@@ -277,6 +283,29 @@ useEffect(()=>{
 
 -- cập nhật lại 
 
+# useEffect
+1 cập nhập lại state 
+2 cập nhập lại Dom 
+3 render lại UI
+4 gọi clearnup nếu deps thay đổi 
+5 gọi  useEffect Callback
+
+# useLayoutEffect
+1. cập nhật lại state 
+2. cập nhật lại DOM
+3. gọi clearnup nếu dép thay điỉu
+4. gọi useLayoutEffect callback
+5. render  lại
 
 
+-- vấn đề nếu sử dụng useEffect thì kho deps thay đổi nó cập nhật vào dom rồi render lại ui trước khi gọi callback 
+--  useLayoutEffect giải quyết vấn đề này do nó cách hoạt động khác nó render lại ui sau cùng 
 
+
+# useRef 
+vấn đề tạo ra 1 biến bên ngoài phạm vi khi UI bị render lại thì ko bị ảnh hưởng đến biến
+useRef()  giá trị là undife
+const ref  = useRef(100)
+
+luôn trả về obj có (1 current)
+ref.current  == 99  
