@@ -1,26 +1,25 @@
-import React  , { useState, useEffect} from "react";
-import Content from "./Content";
+import React, { useState }   from "react";
+import SearchBar from "./Component/SearchBar";
+import ProductTable from "./Component/ProductTable";
+import {PRODUCTS} from "./data/data"
+import { Product_ } from "./context";
+
+
+
 
 function App(){
-
-  const [show, setShow] = useState(false)
+  const [text, setText] = useState('')
   return(
     <div>
-    <button onClick={()=>setShow(!show)}>click me</button>
-
-    {show && <Content/>}
-
+      <Product_.Provider value={{text, PRODUCTS, setText}}>
+         <SearchBar/>
+         <ProductTable/>
+      </Product_.Provider>
     </div>
 
   )
 
 }
-
-
-
-
-
-
 
 
 export default App;
